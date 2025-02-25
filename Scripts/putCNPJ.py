@@ -5,6 +5,7 @@ def putCNPJ(driver,cnpj):
     company.click()
     
     inputCNPJ = locateByXpath(driver, 30, '//*[@id="tvTransparencia:formPortalTransparenciaEmpresa:cnpjEstabelecimento"]')
+    inputCNPJ.clear()
     inputCNPJ.send_keys(cnpj)
     
     time.sleep(1)

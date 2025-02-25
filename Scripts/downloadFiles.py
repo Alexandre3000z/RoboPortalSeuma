@@ -12,6 +12,11 @@ def downloadFiles(driver):
         downloadButton = locateByXpath(driver, 30, '//*[@id="formDetalhePortalTransparencia:dtAlvarasFuncionamento:0:j_idt171"]')
         downloadButton.click()
         
+        time.sleep(3)
+        
+        closeButton = locateByXpath(driver, 30, '//*[@id="formDetalhePortalTransparencia:dlgDetalhesPortalTransparencia"]/div[1]/a')
+        closeButton.click()
+        
     except:
         print('Empresa não é de fortaleza')    
     
