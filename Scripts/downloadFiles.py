@@ -6,7 +6,7 @@ def downloadFiles(driver):
         visualiseFile =findElementByXpath(driver, '//*[@id="tvTransparencia:formPortalTransparenciaEmpresa:dtListaEmpresas:0:row2"]')
         visualiseFile.click()
         
-        alvara = locateByXpath(driver, 1000, '//*[@id="formDetalhePortalTransparencia:codigoTipoServicoPortalEmpresaLocalizar"]/div[2]/ul/li[3]')
+        alvara = locateByXpath(driver, 120, '//*[@id="formDetalhePortalTransparencia:codigoTipoServicoPortalEmpresaLocalizar"]/div[2]/ul/li[3]')
         alvara.click()
         
         downloadButton = locateByXpath(driver, 30, '//*[@id="formDetalhePortalTransparencia:dtAlvarasFuncionamento:0:j_idt171"]')
@@ -19,8 +19,9 @@ def downloadFiles(driver):
         
         return True
     except:
-        return False
-        print('Empresa não é de fortaleza')    
+        
+        print('Empresa não é de fortaleza')
+        return False    
     
     
     
