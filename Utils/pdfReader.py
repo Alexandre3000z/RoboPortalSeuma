@@ -54,6 +54,8 @@ def getExpiration():
             # print("Conteúdo extraído do PDF:\n")
             resultado = extrair_depois_de_observacoes(texto_pdf)
             # print(f"🔍 10 letras após 'Observações': {resultado}")
+            
+            os.remove(pdf_recente)
             return resultado
         else:
             print("Não foi possível extrair o texto do PDF.")
