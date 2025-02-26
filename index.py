@@ -37,6 +37,7 @@ def executeProcess(driver, cnpj, name):
             'Data de Expiração': expirationDate,
             
             }
+        print(companyObjct)
         company_list.add_data(companyObjct)
         
 

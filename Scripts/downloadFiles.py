@@ -13,8 +13,10 @@ def downloadFiles(driver):
         licenseList = findElementsByXpath(driver, '//*[@id="formDetalhePortalTransparencia:codigoTipoServicoPortalEmpresaLocalizar"]/div[2]/ul/li')
         
         for i in licenseList:
-            print(f'Texto do i: {i.text}')
-            if 'Alvará de Funcionamento' in i.text:
+        
+            text = i.text.strip()
+            if 'Alvará de Funcionamento' in text:
+                print('Clickou')
                 i.click()
         
         downloadButton = locateByXpath(driver, 10, '//*[@id="formDetalhePortalTransparencia:dtAlvarasFuncionamento:0:j_idt171"]')
