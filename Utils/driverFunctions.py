@@ -12,7 +12,7 @@ def locateByXpath(driver, time, xpath):
         return element
     
     except:
-        print(f'Element not found by XPath: {xpath}')
+        # print(f'Element not found by XPath: {xpath}')
         return    
                 
     
@@ -23,7 +23,7 @@ def findElementByXpath(driver, xpath):
         return element
     
     except:
-        print(f'Element not found by XPath: {xpath}')
+        # print(f'Element not found by XPath: {xpath}')
         return
     
     
@@ -34,5 +34,5 @@ def findElementsByXpath(driver, xpath):
         return elements
     
     except:
-        print(f'Elements not found by XPath: {xpath}')
+        # print(f'Elements not found by XPath: {xpath}')
         return

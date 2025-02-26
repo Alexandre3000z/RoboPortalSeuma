@@ -6,10 +6,18 @@ def downloadFiles(driver):
         visualiseFile =findElementByXpath(driver, '//*[@id="tvTransparencia:formPortalTransparenciaEmpresa:dtListaEmpresas:0:row2"]')
         visualiseFile.click()
         
-        alvara = locateByXpath(driver, 120, '//*[@id="formDetalhePortalTransparencia:codigoTipoServicoPortalEmpresaLocalizar"]/div[2]/ul/li[3]')
-        alvara.click()
+        x = locateByXpath(driver, 150, '//*[@id="formDetalhePortalTransparencia:dlgDetalhesPortalTransparencia"]/div[1]/a')
         
-        downloadButton = locateByXpath(driver, 30, '//*[@id="formDetalhePortalTransparencia:dtAlvarasFuncionamento:0:j_idt171"]')
+        time.sleep(3)
+         
+        licenseList = findElementsByXpath(driver, '//*[@id="formDetalhePortalTransparencia:codigoTipoServicoPortalEmpresaLocalizar"]/div[2]/ul/li')
+        
+        for i in licenseList:
+            print(f'Texto do i: {i.text}')
+            if 'Alvará de Funcionamento' in i.text:
+                i.click()
+        
+        downloadButton = locateByXpath(driver, 10, '//*[@id="formDetalhePortalTransparencia:dtAlvarasFuncionamento:0:j_idt171"]')
         downloadButton.click()
         
         time.sleep(3)
@@ -19,10 +27,15 @@ def downloadFiles(driver):
         
         return True
     except:
-        
+        try:
+            x = locateByXpath(driver, 5, '//*[@id="formDetalhePortalTransparencia:dlgDetalhesPortalTransparencia"]/div[1]/a')
+            x.click()
+        except:
+            print('nada')
+                
         print('Empresa não é de fortaleza')
-        return False    
-    
+        time.sleep(1.5)
+        return False   
     
     
     

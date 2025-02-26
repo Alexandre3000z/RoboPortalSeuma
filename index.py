@@ -24,7 +24,7 @@ def initSeuma():
 def executeProcess(driver, cnpj, name):
    
     putCNPJ(driver,cnpj)
-    
+    print(f'{name} - {cnpj}')
     validateCompany = downloadFiles(driver)
     
     if validateCompany == True:
