@@ -33,7 +33,7 @@ def downloadFiles(driver):
     except:
         try:
             time.sleep(2)
-            x = locateByXpath(driver, 5, '//*[@id="formDetalhePortalTransparencia:dlgDetalhesPortalTransparencia"]/div[1]/a')
+            x = locateByXpath(driver, 15, '//*[@id="formDetalhePortalTransparencia:dlgDetalhesPortalTransparencia"]/div[1]/a')
             x.click()
             time.sleep(3)
             
