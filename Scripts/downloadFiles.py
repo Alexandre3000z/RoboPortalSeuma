@@ -23,9 +23,10 @@ def downloadFiles(driver):
         downloadButton = locateByXpath(driver, 10, '//*[@id="formDetalhePortalTransparencia:dtAlvarasFuncionamento:0:j_idt171"]')
         downloadButton.click()
         
-        time.sleep(4)
+        time.sleep(15)
         
         closeButton = locateByXpath(driver, 30, '//*[@id="formDetalhePortalTransparencia:dlgDetalhesPortalTransparencia"]/div[1]/a')
+        time.sleep(2)
         closeButton.click()
         
         time.sleep(10)
