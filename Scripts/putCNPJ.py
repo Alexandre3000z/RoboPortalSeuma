@@ -11,5 +11,5 @@ def putCNPJ(driver,cnpj):
     searchCNPJ = locateByXpath(driver, 30, '//*[@id="tvTransparencia:formPortalTransparenciaEmpresa:btnLocalizarPesquisarEmpresas"]')
     searchCNPJ.click()
     
-    time.sleep(3)
+    time.sleep(30)
     
