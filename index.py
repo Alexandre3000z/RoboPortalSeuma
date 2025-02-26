@@ -22,23 +22,48 @@ def initSeuma():
     return driver
 
 def executeProcess(driver, cnpj, name):
-   
-    putCNPJ(driver,cnpj)
-    print(f'{name} - {cnpj}')
-    validateCompany = downloadFiles(driver)
-    
-    if validateCompany == True:
-        expirationDate = getExpiration()
+    print(f'{name} -{cnpj}-')
+    if cnpj != 'nan':
+        putCNPJ(driver,cnpj)
+        validateCompany = downloadFiles(driver)
         
+        if validateCompany == True:
+            expirationDate = getExpiration()
+            
+            companyObjct = {
+                
+                'Nome': name,
+                'CNPJ': cnpj,
+                'Data de Expiração': expirationDate,
+                
+                }
+            print(companyObjct)
+            company_list.add_data(companyObjct)
+            
+        if validateCompany == 'empresa':
+            companyObjct = {
+                    
+                    'Nome': name,
+                    'CNPJ': cnpj,
+                    'Data de Expiração': 'Sem documentos',
+                    
+                    }
+            print(companyObjct)
+            company_list.add_data(companyObjct)     
+        
+    else:
         companyObjct = {
             
             'Nome': name,
-            'CNPJ': cnpj,
-            'Data de Expiração': expirationDate,
+            'CNPJ': 'CNPJ INVALIDO',
+            'Data de Expiração': 'CNPJ INVALIDO',
             
             }
+       
         print(companyObjct)
         company_list.add_data(companyObjct)
+        
+    
         
 
 driver = initSeuma()

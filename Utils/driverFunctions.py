@@ -15,6 +15,18 @@ def locateByXpath(driver, time, xpath):
         # print(f'Element not found by XPath: {xpath}')
         return    
                 
+                
+def locateElementsByXpath(driver, time, xpath):
+    try:
+        element = WebDriverWait(driver, time).until(
+        EC.presence_of_all_elements_located((By.XPATH, xpath))
+        )
+
+        return element
+    
+    except:
+        # print(f'Element not found by XPath: {xpath}')
+        return                    
     
 def findElementByXpath(driver, xpath):
     try:
