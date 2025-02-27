@@ -12,4 +12,3 @@ def putCNPJ(driver,cnpj):
     searchCNPJ.click()
     
     time.sleep(30)
-    
